@@ -8,6 +8,14 @@ import unittest
 # your own tests that more thoroughly test your implementation.
 
 class Hw1MethodsTest(unittest.TestCase):
+    def setUp(self):
+        # Load the student's solution
+        file_path = 'main.py'  # replace with the actual filename if needed
+        spec = importlib.util.spec_from_file_location("main", file_path)
+        student_solution = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(student_solution)
+        self.student_solution = student_solution
+        
     def test_myname(self):
         self.assertTrue(isinstance(myName(), str))
 
