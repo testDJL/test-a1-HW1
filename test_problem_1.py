@@ -1,3 +1,5 @@
 from main import *
 
-assert isinstance(myName(), str), "myName() should return a string"
+def test_problem_1():
+    # Check if the result of myName() is a string
+    assert isinstance(myName(), str)
